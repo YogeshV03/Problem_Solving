@@ -1,0 +1,38 @@
+#!/bin/python3
+
+import os
+import sys
+
+
+#
+# Complete the catAndMouse function below.
+#
+def catAndMouse(x, y, z):
+    solution=None
+    if ((x-z)<(y-z)):
+        solution="Cat A"
+    elif((x-z)>(y-z)):
+        solution="Cat B"
+    elif((x-z)==(y-z)):
+        solution="Mouse C"
+    
+    
+if __name__ == '__main__':
+    f = open(os.environ['OUTPUT_PATH'], 'w')
+
+    q = int(input())
+
+    for q_itr in range(q):
+        xyz = input().split()
+
+        x = int(xyz[0])
+
+        y = int(xyz[1])
+
+        z = int(xyz[2])
+
+        result = catAndMouse(x, y, z)
+
+        f.write(result + '\n')
+
+    f.close()
