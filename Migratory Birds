@@ -14,7 +14,23 @@ import sys
 #
 
 def migratoryBirds(arr):
-    # Write your code here
+     dictn={}
+    for item in arr:
+        if item in dictn:
+            dictn[item]+=1
+        else:
+            dictn[item]=1
+    
+    max_=0
+    for key, values in dictn.items():
+        if (values>max_):
+            max_=values
+            number=key
+        elif (values==max_):
+            if (key<number):
+                number=key
+    
+    return number
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
